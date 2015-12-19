@@ -1,4 +1,4 @@
-class Tast < Post
+class Task < Post
 
   def initialize
     super
