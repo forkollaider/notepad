@@ -17,4 +17,12 @@ class Memo < Post
 
     return @text.unshift(time_string)
   end
+
+  def to_db_hash
+    return super.merge(
+                    {
+                        'text' => @text
+                    }
+    )
+  end
 end

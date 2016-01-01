@@ -24,4 +24,13 @@ class Task < Post
     input = STDIN.gets.chomp
     @due_date=Date.parse(input)
   end
+
+  def to_db_hash
+    return super.merge(
+                    {
+                        'text' => @text,
+                        'due_date' => @due_date.to_s
+                    }
+    )
+  end
 end
